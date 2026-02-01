@@ -125,25 +125,26 @@ PaAno/
 
 ## Results
 
-**PaAno outperforms 39 baseline methods** on the TSB-AD benchmark for **univariate** time-series anomaly detection. 
+**PaAno consistently outperforms 39 baseline methods** on the TSB-AD benchmark for **univariate time-series anomaly detection**.
 
 <div align="center">
 
-<img src="assets/uni_results.png" width="840"/>
+<img src="assets/uni_results.png" width="1000"/>
 
 </div>
 
 
-**PaAno also outperforms 31 baseline methods** on the TSB-AD benchmark for **multivariate** time-series anomaly detection.
+**PaAno also robustly outperforms 31 baseline methods** on the TSB-AD benchmark for **multivariate time-series anomaly detection**.
+
 
 <div align="center">
   
-<img src="assets/mul_results.png" width="840"/>
+<img src="assets/mul_results.png" width="1000"/>
 
 </div>
 
 
-**PaAno** is shown to be effective in capturing various types of anomalies. Additionally, PaAno demonstrates its robust performance across six evaluation metrics.
+Furthermore, PaAno is shown to be effective in capturing various types of anomalies and yields stable performance across all six evaluation metrics compared with the five strong recent methods.
 
 
 <img src="assets/qualitative_results.png" width="1000"/>
@@ -167,7 +168,6 @@ https://github.com/decisionintelligence/CATCH
 
 ---
 
----
 
 ## Citation
 
