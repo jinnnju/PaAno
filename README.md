@@ -6,7 +6,7 @@
 <strong>[ICLR 2026] PaAno</strong>: <strong>Pa</strong>tch-based Representation Learning for Time-Series <strong>Ano</strong>maly Detection
 </h1>
 
-This repository is the official Pytorch implementation code of our "PaAno : Patch-based Representation Learning for Time-Series Anomaly Detection - Jinju Park, Seokho Kang". [[Link]](https://openreview.net/forum?id=NXThkM7Iym)
+This repository is the official Pytorch implementation code of our "PaAno : Patch-based Representation Learning for Time-Series Anomaly Detection - Jinju Park, Seokho Kang [[Paper]](https://openreview.net/forum?id=NXThkM7Iym)." PaAno is a simple yet effective representation-based time-series anomaly detection method. 
 
 </div>
 
@@ -126,9 +126,9 @@ PaAno outperforms 40+ compared baseline methods on the TSB-AD benchmark for both
 
 <div align="center">
 
-<img src="assets/uni_results.png" width="880"/>
+<img src="assets/uni_results.png" width="840"/>
 
-<img src="assets/mul_results.png" width="880"/>
+<img src="assets/mul_results.png" width="840"/>
 
 <img src="assets/qualitative_results.png" width="1000"/>
 
@@ -150,3 +150,17 @@ https://github.com/thuml/Time-Series-Library
 https://github.com/decisionintelligence/CATCH
 
 ---
+
+---
+
+## Citation
+
+If you think our repo is useful, please cite our paper: 
+
+
+
+
+
+---
+
+
