@@ -40,7 +40,9 @@ Although recent studies on time-series anomaly detection have increasingly adopt
 <img src="assets/train.png" width="880"/>
 
 </div>
+
 ---
+
 ## Installation
 
 Clone the repository and set up the environment as follows:
