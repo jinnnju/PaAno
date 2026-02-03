@@ -29,7 +29,7 @@ This repository is the official Pytorch implementation code of our <strong>"PaAn
 
 
 
-
+---
 
 ## Abstract 
 
@@ -40,7 +40,7 @@ Although recent studies on time-series anomaly detection have increasingly adopt
 <img src="assets/train.png" width="880"/>
 
 </div>
-
+---
 ## Installation
 
 Clone the repository and set up the environment as follows:
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ---
 
-## Demo Usage
+## Quick Start
 
 We provide a shell script for convenient execution. Once dependencies are installed, simply run:
 
@@ -79,8 +79,8 @@ This will launch PaAno with the default configuration. Sample data from the TSB-
 
 Please download data from https://github.com/thedatumorg/TSB-AD and move to data/.
 
----
 
+---
 
 ## Project Structure
 ```
@@ -122,7 +122,7 @@ PaAno/
 └── requirements.txt
 
 ```
-
+---
 ## Results
 
 **PaAno consistently outperforms 39 baseline methods** on the TSB-AD benchmark for **univariate time-series anomaly detection**.
@@ -153,22 +153,7 @@ Furthermore, PaAno is shown to be effective in capturing various types of anomal
 
 
 
-
 ---
-
-## Acknowledgement
-
-We sincerely appreciate the following GitHub repositories for their valuable contributions:
-
-https://github.com/TheDatumOrg/TSB-AD
-
-https://github.com/thuml/Time-Series-Library
-
-https://github.com/decisionintelligence/CATCH
-
----
-
-
 
 ## Citation
 If you think our repo is useful, please cite our paper:
@@ -182,9 +167,18 @@ If you think our repo is useful, please cite our paper:
 }
 ```
 
-
-
-
 ---
+
+## Acknowledgement
+
+We sincerely appreciate the following GitHub repositories for their valuable contributions:
+
+https://github.com/TheDatumOrg/TSB-AD
+
+https://github.com/thuml/Time-Series-Library
+
+https://github.com/decisionintelligence/CATCH
+
+
 
 
