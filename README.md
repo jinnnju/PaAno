@@ -18,7 +18,7 @@
 
 
 
-This repository is the official Pytorch implementation code of our <strong>"PaAno : Patch-based Representation Learning for Time-Series Anomaly Detection - Jinju Park, Seokho Kang".</strong> PaAno is a simple yet effective representation-based method for fast and efficient time-series anomaly detection. Our paper is available here: [[Paper Link]](https://openreview.net/forum?id=NXThkM7Iym)
+This repository is the official Pytorch implementation code of our <strong>"PaAno : Patch-based Representation Learning for Time-Series Anomaly Detection - Jinju Park, Seokho Kang".</strong> PaAno is a simple yet effective representation-based method for fast and efficient time-series anomaly detection. Our paper is available here: [[Paper Link]](https://arxiv.org/abs/2602.01359)
 
 
 
