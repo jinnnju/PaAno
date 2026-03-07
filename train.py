@@ -6,6 +6,7 @@ import torch.nn.functional as F
 import random
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, precision_score, recall_score
+from utils.utils import *
 
 
 def train_model(model, train_loader, train_patches, device, num_iter=200, pretext_step=64,
@@ -53,6 +54,7 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             batch_indexes = batch_indexes.squeeze()  # (M,)
             anchors = batch_data
             M = batch_data.shape[0]
+            mu = 1 if batch_data.shape[1] != 1 else 10
             total_len = len(train_patches)
 
             # positives 
@@ -127,7 +129,8 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             hard_neg_dists, _ = torch.max(neg_dists, dim=1)
 
             pos_dists = 1 - pos_sims
-            triplet_loss = F.relu(pos_dists - hard_neg_dists + 0.5).mean()
+            triplet_loss = F.relu(pos_dists - hard_neg_dists + 0.5).mean() / mu
+            triplet_loss = triplet_grad(triplet_loss)
 
             # Pretext Task 
             if current_lambda_pretext > 0.0:
