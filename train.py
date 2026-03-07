@@ -122,7 +122,7 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             pos_sims = _sim_ap.diag()                             # (M,)
 
             _sim_ap_f = _sim_ap.clone()
-            _sim_ap_f.diagonal().fill_(-float('inf'))
+            _sim_ap_f.diagonal().fill_(+float('inf')) 
             neg_dists = 1 - _sim_ap_f
             hard_neg_dists, _ = torch.max(neg_dists, dim=1)
 
