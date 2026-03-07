@@ -131,3 +131,6 @@ class RevIN1d(nn.Module):
             b = self.bias if self.bias is not None else 0.0
             x_hat = (x_hat - b) / (w + self.eps)
         return x_hat * sigma + mu
+
+def triplet_grad(x, r=0.01): # for gradual update
+    return x.detach() + (x - x.detach()) * r
