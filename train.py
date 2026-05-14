@@ -54,7 +54,7 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             batch_indexes = batch_indexes.squeeze()  # (M,)
             anchors = batch_data
             M = batch_data.shape[0]
-            mu = 1 if batch_data.shape[1] != 1 else 10
+            mu = 10
             total_len = len(train_patches)
 
             # positives 
@@ -69,8 +69,8 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
                 _pos_idx[_none_valid] = batch_indexes[_none_valid]
             positives = torch.stack([train_patches[i] for i in _pos_idx.tolist()], dim=0).to(device, non_blocking=True)
 
-            if iteration_count < (num_iter / 10) :
-                current_lambda_pretext = lambda_weight * (1 - (iteration_count / (num_iter / 10)))
+            if iteration_count < (num_iter / 5) :
+                current_lambda_pretext = lambda_weight * (1 - (iteration_count / (num_iter / 5)))
             else:
                 current_lambda_pretext = 0.0
 
@@ -129,8 +129,8 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             hard_neg_dists, _ = torch.max(neg_dists, dim=1)
 
             pos_dists = 1 - pos_sims
-            triplet_loss = F.relu(pos_dists - hard_neg_dists + 0.5).mean() / mu
-            triplet_loss = triplet_grad(triplet_loss)
+            triplet_loss = F.relu(pos_dists - hard_neg_dists + 0.1).mean() / mu
+        
 
             # Pretext Task 
             if current_lambda_pretext > 0.0:
@@ -169,6 +169,9 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             optimizer.step()
 
             pbar.update(1)
+
+            # if iteration_count % 2 == 0:
+            #     tqdm.write(f"    [iter {iteration_count:4d}/{num_iter}] loss: {final_loss.item():.10f}  triplet: {triplet_loss.item():.15f}  pretext: {pretext_loss.item():.6f}")
 
             if final_loss.item() < best_loss:
                 best_loss = final_loss.item()
