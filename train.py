@@ -169,10 +169,7 @@ def train_model(model, train_loader, train_patches, device, num_iter=200, pretex
             optimizer.step()
 
             pbar.update(1)
-
-            # if iteration_count % 2 == 0:
-            #     tqdm.write(f"    [iter {iteration_count:4d}/{num_iter}] loss: {final_loss.item():.10f}  triplet: {triplet_loss.item():.15f}  pretext: {pretext_loss.item():.6f}")
-
+          
             if final_loss.item() < best_loss:
                 best_loss = final_loss.item()
                 best_model_wts = copy.deepcopy(model.state_dict())
