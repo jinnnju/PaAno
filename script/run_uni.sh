@@ -6,7 +6,7 @@
 
 python main.py \
   --data_dir "data/TSB-AD-U" \
-  --patch_size 64 \
+  --patch_size 96 \
   --num_iters 200 \
   --batch_size 512 \
   --lr 1e-4 \
