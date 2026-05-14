@@ -26,6 +26,7 @@ This repository is the official Pytorch implementation code of our <strong>"PaAn
 
 🎉 [2026.1] PaAno has been accepted in ICLR 2026!
 
+🛠️ [2026.5] We made minor implementation refinements to align this repo with the final paper.
 
 
 
