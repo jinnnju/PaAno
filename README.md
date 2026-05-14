@@ -182,6 +182,10 @@ https://github.com/thuml/Time-Series-Library
 
 https://github.com/decisionintelligence/CATCH
 
+https://github.com/iambowen/DADA.git
+
+https://github.com/issaccv/KAN-AD
+
 
 
 
