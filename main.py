@@ -146,9 +146,9 @@ class AnomalyDetection:
                   f"VUS-PR: {results['VUS-PR']:.4f}, VUS-ROC: {results['VUS-ROC']:.4f}, "
                   f"BestF1: {results['Standard-F1']:.4f}, RangeF1: {results['R-based-F1']:.4f}")
             
-            #summary_rows 
+            #summary_rows
             if self.output_dir:
-                self.summary_rows.append({
+                row = {
                     'file': file_name,
                     'Category': category,
                     'AUC-ROC': results['AUC-ROC'],
@@ -157,7 +157,13 @@ class AnomalyDetection:
                     'VUS-ROC': results['VUS-ROC'],
                     'BestF1': results['Standard-F1'],
                     'RangeF1': results['R-based-F1']
-                })
+                }
+                self.summary_rows.append(row)
+
+                os.makedirs(self.output_dir, exist_ok=True)
+                summary_path = os.path.join(self.output_dir, 'summary_metrics.csv')
+                write_header = not os.path.exists(summary_path)
+                pd.DataFrame([row]).to_csv(summary_path, mode='a', header=write_header, index=False)
 
                 scores_dir = os.path.join(self.output_dir, "Filewise_scores")
                 os.makedirs(scores_dir, exist_ok=True)
