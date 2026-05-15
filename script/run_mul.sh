@@ -7,7 +7,7 @@
 python main.py \
   --data_dir "data/TSB-AD-M" \
   --patch_size 96 \
-  --num_iters 200 \
+  --num_iters 100 \
   --batch_size 512 \
   --lr 1e-4 \
   --seed 2027 \
