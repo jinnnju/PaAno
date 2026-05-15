@@ -190,13 +190,6 @@ class AnomalyDetection:
                 'VUS-ROC': float(dist_vusroc),
                 'BestF1':  float(dist_F1),
                 'RangeF1': float(dist_RF1),
-
-              
-                'TrainTime(s)': summary_df['TrainTime(s)'].mean(),
-                'BankTime(s)': summary_df['BankTime(s)'].mean(),
-                'ScoreTime(s)': summary_df['ScoreTime(s)'].mean(),
-                'DistributeTime(s)': summary_df['DistributeTime(s)'].mean(),
-                'TotalTime(s)': summary_df['TotalTime(s)'].mean(),
             }])], ignore_index=True)
 
             summary_path = os.path.join(self.output_dir, 'summary_metrics.csv')
@@ -212,11 +205,6 @@ class AnomalyDetection:
                     VUS_ROC=('VUS-ROC','mean'),
                     BestF1=('BestF1','mean'),
                     RangeF1=('RangeF1','mean'),
-                    TrainTime_s=('TrainTime(s)','mean'),
-                    BankTime_s=('BankTime(s)','mean'),
-                    ScoreTime_s=('ScoreTime(s)','mean'),
-                    DistributeTime_s=('DistributeTime(s)','mean'),
-                    TotalTime_s=('TotalTime(s)','mean'),
                 ).reset_index()
             )
 
